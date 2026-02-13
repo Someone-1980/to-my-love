@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for You ❤️</title>
+    <style>
+        body { 
+            background-color: #ffb6c1; 
+            text-align: center; 
+            font-family: 'Poppins', sans-serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .heart { 
+            color: #ff0000; 
+            font-size: 100px; 
+            animation: beat .3s infinite alternate; 
+            cursor: pointer;
+        }
+        @keyframes beat { to { transform: scale(1.3); } }
+        h1 { color: #ffffff; text-shadow: 2px 2px #ff69b4; margin-top: 20px; }
+        p { font-size: 18px; color: #d81b60; font-weight: bold; }
+        
+        /* Tombol Musik */
+        #btn-play {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        #btn-play:hover { background-color: #ad1457; transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <div class="heart" onclick="playMusic()">❤️</div>
+    <h1>Happy Valentine's Day!</h1>
+    <p>Goodluck yeah with your final exam!...</p>
+    <p>I hope you can get A+ in final exam!</p>
+    <p>I belive you can do it!</p>
+
+    <audio id="myAudio" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="btn-play" onclick="playMusic()">Klik untuk Musik 🎵</button>
+
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("myAudio");
+            var btn = document.getElementById("btn-play");
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "Pause Musik ⏸️";
+            } else {
+                audio.pause();
+                btn.innerHTML = "Play Musik 🎵";
+            }
+        }
+    </script>
+</body>
+</html>
